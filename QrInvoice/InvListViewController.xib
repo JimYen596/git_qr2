@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvListViewController">
+            <connections>
+                <outlet property="btnDelete" destination="SC8-4q-pPP" id="2UR-Bb-RGS"/>
+                <outlet property="invSearchBar" destination="GtN-7K-ygn" id="DY2-FZ-g0j"/>
+                <outlet property="periodLab" destination="eb7-Ze-0Vj" id="Xgi-cf-Vxx"/>
+                <outlet property="periodNavi" destination="IMU-dr-ild" id="DaL-4i-T78"/>
+                <outlet property="searchDisplayController" destination="Izk-gJ-Rv9" id="aeX-gz-Xma"/>
+                <outlet property="tableView" destination="t9t-ix-iwi" id="g6R-7x-UkM"/>
+                <outlet property="toolBar" destination="o1z-2F-M29" id="kwG-db-O6y"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t9t-ix-iwi">
+                    <rect key="frame" x="0.0" y="88" width="320" height="436"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-2F-M29">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="u1r-9O-tZd"/>
+                        <barButtonItem title="刪除" id="SC8-4q-pPP">
+                            <color key="tintColor" red="0.9215686917" green="0.47058826679999999" blue="0.37254902719999999" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="deleteAction:" destination="-1" id="bMn-Lb-CsW"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMU-dr-ild">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </navigationBar>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="103年0708期" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb7-Ze-0Vj">
+                    <rect key="frame" x="109" y="0.0" width="102" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="as5-NB-Gg9"/>
+                        <constraint firstAttribute="height" constant="44" id="doU-Je-Goz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNS-AE-m9h">
+                    <rect key="frame" x="211" y="0.0" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="btn_list_next">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nextPeriod:" destination="-1" eventType="touchUpInside" id="IJ4-kz-vuH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fr2-2f-ArG">
+                    <rect key="frame" x="65" y="0.0" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="btn_list_pre">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="previousPeriod:" destination="-1" eventType="touchUpInside" id="wJx-YI-bJD"/>
+                    </connections>
+                </button>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GtN-7K-ygn">
+                    <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="o1z-2F-M29" secondAttribute="bottom" id="1xI-QR-rAF"/>
+                <constraint firstItem="t9t-ix-iwi" firstAttribute="top" secondItem="GtN-7K-ygn" secondAttribute="bottom" id="42P-zY-4Dh"/>
+                <constraint firstAttribute="trailing" secondItem="IMU-dr-ild" secondAttribute="trailing" id="5W8-U3-nnh"/>
+                <constraint firstAttribute="bottom" secondItem="o1z-2F-M29" secondAttribute="bottom" id="7a3-JW-baF"/>
+                <constraint firstItem="eb7-Ze-0Vj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="109" id="DsD-Po-fbZ"/>
+                <constraint firstItem="IMU-dr-ild" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="J7K-bm-4Qg"/>
+                <constraint firstAttribute="trailing" secondItem="GtN-7K-ygn" secondAttribute="trailing" id="Roa-lv-xs7"/>
+                <constraint firstItem="o1z-2F-M29" firstAttribute="top" secondItem="t9t-ix-iwi" secondAttribute="bottom" id="SEr-By-4e4"/>
+                <constraint firstAttribute="trailing" secondItem="o1z-2F-M29" secondAttribute="trailing" id="Tjn-ze-TGJ"/>
+                <constraint firstItem="GtN-7K-ygn" firstAttribute="top" secondItem="eb7-Ze-0Vj" secondAttribute="bottom" id="YFH-4H-SP9"/>
+                <constraint firstItem="eb7-Ze-0Vj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bD5-t8-xga"/>
+                <constraint firstItem="GtN-7K-ygn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bSs-xi-tme"/>
+                <constraint firstItem="GtN-7K-ygn" firstAttribute="top" secondItem="eb7-Ze-0Vj" secondAttribute="bottom" id="ijP-M6-Dbb"/>
+                <constraint firstItem="o1z-2F-M29" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lLu-EK-Fdn"/>
+                <constraint firstAttribute="trailing" secondItem="eb7-Ze-0Vj" secondAttribute="trailing" constant="109" id="qca-5r-zpf"/>
+                <constraint firstAttribute="trailing" secondItem="t9t-ix-iwi" secondAttribute="trailing" id="sVE-Wu-5XR"/>
+                <constraint firstItem="t9t-ix-iwi" firstAttribute="top" secondItem="GtN-7K-ygn" secondAttribute="bottom" id="sxd-fm-mMO"/>
+                <constraint firstItem="t9t-ix-iwi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="u5p-yU-GsA"/>
+                <constraint firstItem="IMU-dr-ild" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y6c-Ja-5yA"/>
+                <constraint firstItem="GtN-7K-ygn" firstAttribute="top" secondItem="IMU-dr-ild" secondAttribute="bottom" id="yfY-lu-wRc"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+        <searchDisplayController id="Izk-gJ-Rv9">
+            <connections>
+                <outlet property="delegate" destination="-1" id="yMP-6o-aeI"/>
+                <outlet property="searchContentsController" destination="-1" id="Kcx-YQ-iaR"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="DD6-6N-WwG"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="62d-vd-Uqm"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+    <resources>
+        <image name="btn_list_next" width="20" height="20"/>
+        <image name="btn_list_pre" width="20" height="20"/>
+    </resources>
+</document>
